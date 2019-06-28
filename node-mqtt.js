@@ -1,16 +1,16 @@
 /***************************  MQTT     ************************************/
 /*******************************************************************************/
 var mqtt    = require('mqtt');
-var mqtthost = 'm13.cloudmqtt.com';
+var mqtthost = 'postman.cloudmqtt.com';
 var options = {
 	host: mqtthost,
-	port: 11249,
+	port: 37188,
 	protocolId: 'MQIsdp',
 	secureProtocol: 'TLSv1_method',
 	protocolId: 'MQIsdp',
 	protocolVersion: 3,
-	username: 'username',
-  	password: 'password'
+	username: 'jtkdairj',
+  	password: 'V2v5EPfY2CEh'
 };
 /***************************  FIM MQTT      ************************************/
 /*******************************************************************************/
@@ -67,8 +67,8 @@ function iniciaMQTT()
 	var client= mqtt.connect(options);
 	client.on('connect', function ()
 	{
-	  	client.subscribe('/seu_topico_publico')
-  		client.publish('/seu_topico_publico', 'Hello mqtt')
+	  	client.subscribe('/outTopic')
+  		client.publish('/outTopic', 'Hello mqtt')
 	});
 
 	client.on('message', function (topic, message)
